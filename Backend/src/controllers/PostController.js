@@ -17,10 +17,7 @@ module.exports = {
     const [name] = image.split(".");
     const fileName = `${name}.jpg`;
 
-    await sharp(req.file.path)
-      .resize(500)
-      .jpeg({ quality: 70 })
-      .toFile(path.resolve(req.file.destination, "resized", fileName));
+    await sharp(req.file.path).resize(500).jpeg({ quality: 70 }).toFile(path.resolve(req.file.destination, "resized", fileName));
 
     fs.unlinkSync(req.file.path);
 
