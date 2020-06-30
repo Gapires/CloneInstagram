@@ -14,6 +14,7 @@ const Stack = createStackNavigator();
 export default function Routes() {
   return (
     <Stack.Navigator
+      initialRouteName="New"
       mode="modal"
       screenOptions={{ headerTitle: <Image source={logo}></Image>, headerTitleAlign: "center", headerBackTitle: null, headerTintColor: "#000" }}
     >
@@ -28,7 +29,7 @@ export default function Routes() {
           ),
         })}
       />
-      <Stack.Screen name="New" component={New} />
+      <Stack.Screen name="New" component={New} options={{ headerTitle: "Nova Publicação" }} />
     </Stack.Navigator>
   );
 }
